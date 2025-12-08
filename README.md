@@ -2,38 +2,16 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Deployed on Netlify
+[https://thrillamoviedatabase.netlify.app/](https://thrillamoviedatabase.netlify.app/)
 
 
 ## Minimum Requirements
@@ -44,3 +22,48 @@ As a user,
 ● I see the total count of search results
 ● I see notable information for each search result, such as the summary, poster,
 duration, rating, etc.
+
+## Highlights and Notes
+
+### What I found most interesting 
+The “total count of search results” requirement was the most interesting challenge.
+The API provides a total number of pages, but not a total number of titles. I explored a few ways to approximate a total title count, but each approach involved unnecessary assumptions or extra client-side work.
+
+Ultimately, I decided the most honest and user-friendly solution was to:
+
+- Display the page number alongside the total pages
+
+- Let users choose how many titles appear per page
+
+This turned out to be a thoughtful UX decision and reinforced how much API contracts shape UI possibilities.
+
+### What I am most proud of 
+I’m extremely proud of the overall structure and clarity of the implementation:
+
+- A clean separation between API utilities, custom hooks, and UI components
+
+- Small, isolated, reusable components that are easy to debug and extend
+
+- Intuitive data flow with minimal cross-coupling
+
+- Fetching genres dynamically from the API instead of hardcoding values
+
+- The final app feels structured, maintainable, and scalable—qualities I value highly in real-world engineering work.
+
+### Improvements with more time
+
+1. Enhanced search experience
+
+I’d love to add autocomplete/typeahead using the /movies/titles endpoint, and support filtering by multiple genres simultaneously.
+
+2. Improved movie details page
+
+I would add related movies based on shared genres, and make genre “chips” clickable to trigger a new search.
+
+3. Performance and UX enhancements
+
+I would introduce client-side caching (e.g., React Query) and improve poster fallback handling for missing or broken images.
+
+4. Accessibility improvements
+
+While I use semantic HTML by default, I’d like to expand ARIA support and improve keyboard navigation across all interactive elements.
