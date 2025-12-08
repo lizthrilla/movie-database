@@ -5,7 +5,7 @@ interface GenreDropDownProps {
     value: string | undefined;
     genres: string[];
     genreLoading: boolean;
-    genresError: string
+    genresError: string | null
 }
 export default function GenreDropDown({value, genres, onChange, genreLoading, genresError}: GenreDropDownProps) {
     return (
